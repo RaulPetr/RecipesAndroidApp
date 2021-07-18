@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="qt_types">
+        <item>g</item>
+        <item>kg</item>
+        <item>l</item>
+        <item>ml</item>
+        <item>linguri</item>
+        <item>lingurite</item>
+        <item>praf</item>
+
+    </string-array>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:title="@string/Login"
+            android:id="@+id/menu_login"
+    />
+
+    <item
+        android:title="Sign Out"
+        android:id="@+id/menu_signout"
+    />
+</menu>

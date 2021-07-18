@@ -1,0 +1,77 @@
+com/example/recipes/RegisterActivity.java
+ com.example.recipes.RegisterActivity
+ com.example.recipes.RegisterActivity$1
+ com.example.recipes.RegisterActivity$1$1
+com/example/recipes/BuildConfig.java
+ com.example.recipes.BuildConfig
+com/example/recipes/ui/notifications/NotificationsFragment.java
+ com.example.recipes.ui.notifications.NotificationsFragment
+ com.example.recipes.ui.notifications.NotificationsFragment$1
+com/example/recipes/ui/notifications/NotificationsViewModel.java
+ com.example.recipes.ui.notifications.NotificationsViewModel
+com/example/recipes/databinding/ActivityLoginBinding.java
+ com.example.recipes.databinding.ActivityLoginBinding
+com/example/recipes/databinding/FragmentHomeBinding.java
+ com.example.recipes.databinding.FragmentHomeBinding
+com/example/recipes/ui/home/MyAppGlideModule.java
+ com.example.recipes.ui.home.MyAppGlideModule
+com/example/recipes/databinding/ActivitySingleRecipeBinding.java
+ com.example.recipes.databinding.ActivitySingleRecipeBinding
+com/example/recipes/databinding/ContentScrollingBinding.java
+ com.example.recipes.databinding.ContentScrollingBinding
+com/example/recipes/databinding/ActivityMainBinding.java
+ com.example.recipes.databinding.ActivityMainBinding
+com/example/recipes/ForgotPasswordActivity.java
+ com.example.recipes.ForgotPasswordActivity
+ com.example.recipes.ForgotPasswordActivity$1
+ com.example.recipes.ForgotPasswordActivity$1$1
+com/example/recipes/databinding/ActivityAddRecipeBinding.java
+ com.example.recipes.databinding.ActivityAddRecipeBinding
+com/example/recipes/databinding/FragmentDashboardBinding.java
+ com.example.recipes.databinding.FragmentDashboardBinding
+com/example/recipes/databinding/ActivityForgotPasswordBinding.java
+ com.example.recipes.databinding.ActivityForgotPasswordBinding
+com/example/recipes/LoginActivity.java
+ com.example.recipes.LoginActivity
+ com.example.recipes.LoginActivity$1
+ com.example.recipes.LoginActivity$1$1
+ com.example.recipes.LoginActivity$2
+com/example/recipes/ui/dashboard/DashboardFragment.java
+ com.example.recipes.ui.dashboard.DashboardFragment
+ com.example.recipes.ui.dashboard.DashboardFragment$1
+com/example/recipes/MainActivity.java
+ com.example.recipes.MainActivity
+com/example/recipes/databinding/RecipeListItemBinding.java
+ com.example.recipes.databinding.RecipeListItemBinding
+com/example/recipes/ui/home/RecipeModel.java
+ com.example.recipes.ui.home.RecipeModel
+com/example/recipes/databinding/ActivityRegisterBinding.java
+ com.example.recipes.databinding.ActivityRegisterBinding
+com/example/recipes/databinding/FragmentNotificationsBinding.java
+ com.example.recipes.databinding.FragmentNotificationsBinding
+com/example/recipes/databinding/IngredientItemBinding.java
+ com.example.recipes.databinding.IngredientItemBinding
+com/example/recipes/ui/dashboard/DashboardViewModel.java
+ com.example.recipes.ui.dashboard.DashboardViewModel
+com/example/recipes/RecyclerAdapter.java
+ com.example.recipes.RecyclerAdapter
+ com.example.recipes.RecyclerAdapter$1
+ com.example.recipes.RecyclerAdapter$ViewHolder
+com/example/recipes/AddRecipeActivity.java
+ com.example.recipes.AddRecipeActivity
+ com.example.recipes.AddRecipeActivity$1
+ com.example.recipes.AddRecipeActivity$1$1
+ com.example.recipes.AddRecipeActivity$2
+ com.example.recipes.AddRecipeActivity$3
+ com.example.recipes.AddRecipeActivity$4
+ com.example.recipes.AddRecipeActivity$5
+com/example/recipes/ui/home/HomeFragment.java
+ com.example.recipes.ui.home.HomeFragment
+ com.example.recipes.ui.home.HomeFragment$1
+ com.example.recipes.ui.home.HomeFragment$2
+ com.example.recipes.ui.home.HomeFragment$RecipeViewHolder
+ com.example.recipes.ui.home.HomeFragment$RecipeViewHolder$1
+com/example/recipes/SingleRecipeActivity.java
+ com.example.recipes.SingleRecipeActivity
+ com.example.recipes.SingleRecipeActivity$1
+ com.example.recipes.SingleRecipeActivity$2

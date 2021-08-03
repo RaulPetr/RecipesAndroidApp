@@ -3,20 +3,6 @@ package com.example.recipes;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.android.material.appbar.CollapsingToolbarLayout;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,7 +12,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.recipes.databinding.ActivitySingleRecipeBinding;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -36,7 +32,6 @@ import com.google.firebase.storage.FirebaseStorage;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.net.URI;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
@@ -105,6 +100,26 @@ public class SingleRecipeActivity extends AppCompatActivity {
             });
         }
 
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        if(recipeName != null) {
+            CollectionReference recipes = firestore.collection("testRecipes");
+            Query query = recipes.whereEqualTo("name", recipeName);
+            query.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                @Override
+                public void onComplete(@NonNull @NotNull Task<QuerySnapshot> task) {
+                    if(task.isSuccessful()) {
+                        DocumentSnapshot document = Objects.requireNonNull(task.getResult()).getDocuments().get(0);
+                        showData(document);
+                    } else {
+                        Toast.makeText(SingleRecipeActivity.this, "Could not get data", Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
+        }
     }
 
     private void showData(DocumentSnapshot document) {
@@ -195,13 +210,19 @@ public class SingleRecipeActivity extends AppCompatActivity {
     }
 
     private void deleteRecipe() {
-        //check user credentials
+        if(FirebaseAuth.getInstance().getCurrentUser() == null) {
+            Toast.makeText(getApplicationContext(), "You must be logged in to make changes", Toast.LENGTH_LONG).show();
+            return;
+        }
         firestore.collection("testRecipes").document(recipeName).delete();
         finish();
     }
 
     private void editRecipe() {
-        //check user credentials
+        if(FirebaseAuth.getInstance().getCurrentUser() == null) {
+            Toast.makeText(getApplicationContext(), "You must be logged in to make changes", Toast.LENGTH_LONG).show();
+            return;
+        }
         Intent intent = new Intent(SingleRecipeActivity.this, AddRecipeActivity.class);
         intent.putExtra("recipeName", recipeName);
         startActivity(intent);

@@ -64,7 +64,7 @@ public class HomeFragment extends Fragment {
                     startActivity(new Intent(view.getContext(), AddRecipeActivity.class).putExtra("user", currentUser.getEmail()));
             }
         });
-//        StorageReference storageRef;
+
 
         //Query
         Query query = firebaseFirestore.collection("testRecipes");
@@ -74,9 +74,6 @@ public class HomeFragment extends Fragment {
 
 
         adapter = new FirestoreRecyclerAdapter<RecipeModel, RecipeViewHolder>(options) {
-
-
-
             @NonNull
             @NotNull
             @Override
@@ -89,8 +86,6 @@ public class HomeFragment extends Fragment {
             protected void onBindViewHolder(@NonNull @NotNull RecipeViewHolder holder, int position, @NonNull @NotNull RecipeModel model) {
                 if(model.getImageLink() != null && !model.getImageLink().isEmpty()) {
                     StorageReference storageRef = storage.getReferenceFromUrl(model.getImageLink());
-    //                Log.d(TAG, model.getImage());
-
 
                     RequestOptions options = new RequestOptions()
                             .centerCrop()
@@ -104,15 +99,6 @@ public class HomeFragment extends Fragment {
 
                 holder.name.setText(model.getName());
                 holder.description.setText(model.getDescription());
-//                if(model.getIngredients() != null) {
-//                    Log.d(TAG, model.getIngredients().toString());
-//                    Log.d(TAG, model.getIngredients().keySet().toString());
-//                    if(model.getIngredients().get("Zahar") != null) {
-//                        Map<String, Object> map = (Map<String, Object>) model.getIngredients().get("Zahar");
-//                        Log.d(TAG, map.get("qt").toString());
-//                    }
-//                }
-
             }
 
             @Override

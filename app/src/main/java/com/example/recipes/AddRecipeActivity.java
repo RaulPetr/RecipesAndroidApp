@@ -20,6 +20,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -97,6 +98,11 @@ public class AddRecipeActivity extends AppCompatActivity {
         Log.d(TAG, "saved");
         firebaseFirestore = FirebaseFirestore.getInstance();
         firebaseStorage = FirebaseStorage.getInstance();
+        if(FirebaseAuth.getInstance().getCurrentUser() == null) {
+            Toast.makeText(v.getContext(), "You must be logged in to make changes", Toast.LENGTH_LONG).show();
+            finish();
+            return;
+        }
         StorageReference storageRef = firebaseStorage.getReference().child("recipeImages");
         Map<String, Object> ingredientsMap = new HashMap<>();
         for(int i = 0; i < recyclerView.getChildCount(); i++) {
@@ -108,13 +114,11 @@ public class AddRecipeActivity extends AppCompatActivity {
                 Log.d(TAG, "name " + name + " qt " + qt + " type" + qt_type);
                 Map<String, Object> quantity = new HashMap<>();
 
-                if (!qt.isEmpty())
+                if (!qt.isEmpty()) {
                     quantity.put("qt", Integer.parseInt(qt));
-                else
-                    quantity.put("qt", 0);
-
-                quantity.put("qt_type", qt_type);
-                ingredientsMap.put(name, quantity);
+                    quantity.put("qt_type", qt_type);
+                    ingredientsMap.put(name, quantity);
+                }
 
             }
         }
@@ -141,13 +145,22 @@ public class AddRecipeActivity extends AppCompatActivity {
         }
 
         String user = getIntent().getExtras().getString("user");
-
-        RecipeModel recipe = new RecipeModel(name.getText().toString(),
-                instructions.getText().toString(),
-                description.getText().toString(),
-                "gs://" + storageRef.getBucket() + storageRef.getPath(),
-                ingredientsMap,
-                user);
+        RecipeModel recipe;
+        if(image != null) {
+            recipe = new RecipeModel(name.getText().toString(),
+                    instructions.getText().toString(),
+                    description.getText().toString(),
+                    "gs://" + storageRef.getBucket() + storageRef.getPath(),
+                    ingredientsMap,
+                    user);
+        } else {
+            recipe = new RecipeModel(name.getText().toString(),
+                    instructions.getText().toString(),
+                    description.getText().toString(),
+                    "",
+                    ingredientsMap,
+                    user);
+        }
 
         firebaseFirestore.collection("testRecipes").document(recipe.getName()).set(recipe).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override

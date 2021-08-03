@@ -4,10 +4,6 @@
         "source": "C:\\Users\\raulp\\Desktop\\playground\\apps\\Recipes2\\app\\src\\main\\res\\layout\\content_scrolling.xml"
     },
     {
-        "merged": "C:\\Users\\raulp\\Desktop\\playground\\apps\\Recipes2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_dashboard.xml",
-        "source": "C:\\Users\\raulp\\Desktop\\playground\\apps\\Recipes2\\app\\src\\main\\res\\layout\\fragment_dashboard.xml"
-    },
-    {
         "merged": "C:\\Users\\raulp\\Desktop\\playground\\apps\\Recipes2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_forgot_password.xml",
         "source": "C:\\Users\\raulp\\Desktop\\playground\\apps\\Recipes2\\app\\src\\main\\res\\layout\\activity_forgot_password.xml"
     },
@@ -30,6 +26,10 @@
     {
         "merged": "C:\\Users\\raulp\\Desktop\\playground\\apps\\Recipes2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_home.xml",
         "source": "C:\\Users\\raulp\\Desktop\\playground\\apps\\Recipes2\\app\\src\\main\\res\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\raulp\\Desktop\\playground\\apps\\Recipes2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_search.xml",
+        "source": "C:\\Users\\raulp\\Desktop\\playground\\apps\\Recipes2\\app\\src\\main\\res\\layout\\fragment_search.xml"
     },
     {
         "merged": "C:\\Users\\raulp\\Desktop\\playground\\apps\\Recipes2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_add_recipe.xml",

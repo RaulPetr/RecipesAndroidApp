@@ -16,7 +16,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Descriere"
+            android:text="@string/description"
             android:textSize="20sp"
             android:gravity="center"/>
 
@@ -24,34 +24,35 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/recipe_description_single"
-            android:text="This is a short description."
-            android:layout_margin="@dimen/text_margin"/>
+            android:text="@string/this_is_a_short_description"
+            android:layout_margin="@dimen/text_margin"
+            android:gravity="center"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ingrediente"
+            android:text="@string/ingredients"
             android:textSize="20sp"
             android:gravity="center"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/recipe_ingredients"
-            android:text="This is a list\n of ingredients"
+            android:text="@string/this_is_a_list_of_ingredients"
             android:gravity="center"
             android:layout_margin="@dimen/text_margin"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Mod de preparare"
+            android:text="@string/instructions"
             android:textSize="20sp"
             android:gravity="center"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/recipe_instructions"
-            android:text="These are the instructions"
+            android:text="@string/these_are_the_instructions"
             android:gravity="center"
             android:layout_margin="@dimen/text_margin"/>
         <Button
@@ -60,7 +61,7 @@
             android:layout_gravity="center"
             android:visibility="gone"
             android:id="@+id/goto_web"
-            android:text="Take me there"/>
+            android:text="@string/take_me_there"/>
 
 
 

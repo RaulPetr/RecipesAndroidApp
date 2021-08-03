@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.search.SearchFragment">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/search_text"
+        android:hint="@string/type_to_search"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:background="@drawable/rectangle_backdround"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:inputType="text"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/search_for"
+        android:text="@string/search_for"
+        app:layout_constraintTop_toBottomOf="@+id/search_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textSize="24sp"/>
+
+    <RadioButton
+        android:id="@+id/radioButtName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Name"
+        app:layout_constraintRight_toLeftOf="@+id/radioButtDesc"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_for"
+        app:layout_constraintHorizontal_chainStyle="spread"/>
+
+    <RadioButton
+        android:id="@+id/radioButtDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Description"
+        app:layout_constraintLeft_toRightOf="@+id/radioButtName"
+        app:layout_constraintRight_toLeftOf="@+id/radioButtInst"
+        app:layout_constraintTop_toBottomOf="@+id/search_for"
+        />
+
+    <RadioButton
+        android:id="@+id/radioButtInst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Instructions"
+        app:layout_constraintLeft_toRightOf="@+id/radioButtDesc"
+        app:layout_constraintTop_toBottomOf="@+id/search_for"
+        app:layout_constraintRight_toRightOf="parent"
+       />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recipesListSearch"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioButtDesc"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
